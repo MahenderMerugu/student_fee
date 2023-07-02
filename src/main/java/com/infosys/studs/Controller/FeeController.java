@@ -1,6 +1,7 @@
 package com.infosys.studs.Controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,21 +22,21 @@ public class FeeController {
 	@Autowired
 	StdFeeRespository stdFeeRespository;
 	
-	@GetMapping("/GetstdDetails/{id}")
-	public List<FeeEntity> getdetails(@PathVariable int id){
+	@GetMapping("/GetFeeDetails/{id}")
+	public Optional<FeeEntity> getIddetails(@PathVariable Long id){
 		
-		List<FeeEntity> stddetails= stdFeeRespository.findBystdid(id);
-		return stddetails;
+		Optional<FeeEntity> stddetail= stdFeeRespository.findById(id);
+		return stddetail;
 	}
 	
-	@PostMapping("/GetstdDetails/SaveStdFeedetails")
+	@PostMapping("/GetFeeDetails/SaveStdFeedetails")
 	public FeeEntity getdetails(@RequestBody   FeeEntity feeEntity){
 		FeeEntity stddetails= stdFeeRespository.saveAndFlush(feeEntity);
 		return stddetails;		
 	}
 	
 
-	@GetMapping("/GetstdDetails/GetAllStdFeedetails")
+	@GetMapping("/GetFeeDetails/GetFeedetails")
 	public List<FeeEntity> getAlldetails(){
 		List<FeeEntity>  stddetails= stdFeeRespository.findAll();
 		return stddetails;		

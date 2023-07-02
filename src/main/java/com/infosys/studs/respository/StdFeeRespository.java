@@ -9,7 +9,5 @@ import com.infosys.studs.Entity.FeeEntity;
 
 @Repository
 public interface StdFeeRespository extends JpaRepository<FeeEntity, Long>{
-	
-	List<FeeEntity> findBystdid(int stdid);
 
 }

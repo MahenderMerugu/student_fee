@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name="student_fee")
+@Table(name="fee_dts")
 @Data
 public class FeeEntity {
 
@@ -17,17 +17,31 @@ public class FeeEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Long id;
-	@Column(name = "stdid")
-	public Integer stdid ;
-	@Column(name = "fee")
-	public String fee ;
+	@Column(name = "courcecode")
+	public String courceCode ;
+	@Column(name = "tutionfee")
+	public int tutionfee ;
+	@Column(name = "splfee")
+	public int splfee ;
+	@Column(name = "bus")
+	public int bus ;
+	@Column(name = "hostal")
+	public int hostal ;
+	@Column(name = "labfee")
+	public int labfee ;
+	@Column(name = "libraryfee")
+	public int libraryfee ;
 	@Column(name = "totalamount")
-	public String totalamount ;
+	public int totalamount ;
 	@Column(name = "amountpaid")
-	public String amountpaid ;
+	public int amountpaid ;
 	@Column(name = "amountdue")
-	public String amountdue ;
-	@Column(name = "lastamountpaid")
-	public String lastamountpaid ;
+	public int amountdue ;
+	@Column(name = "status")
+	public String status ;
+	@Column(name = "createddate")
+	public String createddate ;
+	@Column(name = "updated")
+	public String updated ;
 	
 }
